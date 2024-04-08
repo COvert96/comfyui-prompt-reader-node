@@ -327,7 +327,10 @@ class SDPromptSaver:
                 "path": ("STRING", {"default": "%date/", "multiline": False}),
                 "model_name": (folder_paths.get_filename_list("checkpoints"),),
                 # "model_name_str": ("STRING", {"default": ""}),
-                "vae_name": (folder_paths.get_filename_list("vae"),),
+                "vae_name": (
+                    ["baked VAE"] + folder_paths.get_filename_list("vae"),
+                    {"default": "baked VAE"}
+                ),
                 "seed": (
                     "INT",
                     {
